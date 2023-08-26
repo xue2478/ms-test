@@ -35,8 +35,8 @@ function myCall(context,...rest){
 }
 // bind
 
-function myBind(context,...initArg){
-  const fun = this;
+Function.prototype.myBind = function(context,...initArg){
+  const fun = this; //函数自己
   let bindFun = function(...rest){
     if(this instanceof bindFun){
       return new foo(...initArg,...rest)
